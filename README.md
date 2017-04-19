@@ -1,9 +1,14 @@
-# api documentation for  [hotel (v0.7.1)](https://github.com/typicode/hotel)  [![npm package](https://img.shields.io/npm/v/npmdoc-hotel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hotel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hotel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hotel)
+# npmdoc-hotel
+
+#### api documentation for  [hotel (v0.7.2)](https://github.com/typicode/hotel)  [![npm package](https://img.shields.io/npm/v/npmdoc-hotel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hotel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hotel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hotel)
+
 #### Local domains for everyone and more!
 
-[![NPM](https://nodei.co/npm/hotel.png?downloads=true)](https://www.npmjs.com/package/hotel)
+[![NPM](https://nodei.co/npm/hotel.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/hotel)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-hotel/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-hotel_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-hotel/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-hotel/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-hotel/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-hotel/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-hotel/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-hotel/build/screenCapture.npmPackageListing.svg)
 
@@ -17,14 +22,14 @@
 
 {
     "author": {
-        "name": "Typicode",
-        "email": "typicode@gmail.com"
+        "name": "Typicode"
     },
     "ava": {
         "serial": true,
         "verbose": true,
         "require": [
-            "babel-register"
+            "babel-register",
+            "./test/_setup"
         ],
         "babel": "inherit"
     },
@@ -47,10 +52,10 @@
         "matcher": "^0.1.2",
         "mkdirp": "^0.5.1",
         "once": "^1.3.2",
+        "pug": "^2.0.0-beta11",
         "respawn": "^2.4.1",
         "server-ready": "^0.3.1",
         "strip-ansi": "^3.0.0",
-        "strip-indent": "^2.0.0",
         "sudo-block": "^1.2.0",
         "tildify": "^1.1.2",
         "unquote": "^1.1.0",
@@ -58,7 +63,7 @@
         "update-notifier": "^1.0.0",
         "user-startup": "^0.2.1",
         "vhost": "^3.0.2",
-        "yargs": "^6.3.0"
+        "yargs": "^7.0.2"
     },
     "description": "Local domains for everyone and more! ",
     "devDependencies": {
@@ -72,13 +77,12 @@
         "babel-preset-stage-2": "^6.5.0",
         "babel-register": "^6.9.0",
         "babel-runtime": "^6.6.1",
-        "cross-env": "^3.1.4",
         "css-loader": "^0.25.0",
         "escape-html": "^1.0.3",
         "husky": "^0.13.1",
         "json-loader": "^0.5.4",
         "lodash.difference": "^4.3.0",
-        "mock-fs": "^3.9.0",
+        "mock-fs": "^4.2.0",
         "nodemon": "^1.8.1",
         "npm-run-all": "^3.1.0",
         "pkg-ok": "^1.0.1",
@@ -86,22 +90,23 @@
         "sinon": "^1.17.7",
         "standard": "^8.5.0",
         "supertest": "^2.0.1",
+        "tempy": "^0.1.0",
         "uid": "0.0.2",
-        "vue": "^2.1.0",
-        "vue-loader": "^10.0.0",
-        "vue-template-compiler": "^2.1.10",
-        "webpack": "^2.2.1",
+        "vue": "^2.2.6",
+        "vue-loader": "^11.3.4",
+        "vue-template-compiler": "^2.2.6",
+        "webpack": "^2.3.3",
         "whatwg-fetch": "^1.0.0"
     },
     "directories": {},
     "dist": {
-        "shasum": "28d3626faf6c3d614e1330400bd00e79ddead567",
-        "tarball": "https://registry.npmjs.org/hotel/-/hotel-0.7.1.tgz"
+        "shasum": "3ef5aac69c7dc467738769daf5f9a9eb47ed6c16",
+        "tarball": "https://registry.npmjs.org/hotel/-/hotel-0.7.2.tgz"
     },
     "engines": {
         "node": ">= 4"
     },
-    "gitHead": "3c1bfe7c564a148e68efa996f3147bb426d0d2f4",
+    "gitHead": "48babb59274bd073b87b477241d2f4835f126cf9",
     "homepage": "https://github.com/typicode/hotel",
     "keywords": [
         "dev",
@@ -117,14 +122,12 @@
     "main": "lib",
     "maintainers": [
         {
-            "name": "typicode",
-            "email": "typicode@gmail.com"
+            "name": "typicode"
         }
     ],
     "name": "hotel",
     "optionalDependencies": {},
     "preferGlobal": true,
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/typicode/hotel.git"
@@ -132,28 +135,19 @@
     "scripts": {
         "build": "run-s build:*",
         "build:babel": "rimraf lib && babel src -d lib --copy-files --ignore src/front",
-        "build:webpack": "rimraf dist && cross-env NODE_ENV=production webpack -p",
-        "precommit": "npm test",
+        "build:webpack": "rimraf dist && webpack -p",
+        "lint": "standard --fix",
+        "precommit": "npm test && npm run lint",
         "prepublish": "npm run build && pkg-ok",
         "start": "run-p start:*",
         "start:nodemon": "nodemon -- src/daemon",
         "start:webpack": "rimraf dist && webpack -d --watch",
-        "test": "ava && standard --fix",
+        "test": "ava",
         "uninstall": "node bin/uninstall.js"
     },
-    "version": "0.7.1"
+    "version": "0.7.2"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module hotel](#apidoc.module.hotel)
-
-
-
-# <a name="apidoc.module.hotel"></a>[module hotel](#apidoc.module.hotel)
 
 
 
